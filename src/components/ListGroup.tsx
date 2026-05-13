@@ -1,12 +1,10 @@
-import { MouseEvent, useState } from "react";
-
-function ListGroup() {
-  let items = ["Hyderabad", "Bengaluru", "Mumbai", "Pune", "Chennai"];
-
-  //Hook
-  const [selectedIndex, setSetSelectedIndex] = useState(-1);
-  //arr[0] // variable (selectedIndex)
-  //arr[1] // updater function
+import { useState } from "react";
+interface Props {
+  items: string[];
+  heading: string;
+}
+function ListGroup({ items, heading }: Props) {
+  const [selectedIndex, setSetSelectedIndex] = useState(-1); //Hook
 
   return (
     <>
