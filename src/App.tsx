@@ -1,22 +1,13 @@
 import { useState } from "react";
 import Alert from "./components/Alert";
 import Button from "./components/Button";
+import ListGroup from "./components/ListGroup";
 
 function App() {
-  const [isAlertVisible, setAlertVisible] = useState(false);
+  const cities = ["Hyderabad", "Bengaluru", "Mumbai", "Pune"];
+  const handleClick = (item: string) => console.log(item);
   return (
-    <>
-      <Button color="primary" onClick={() => setAlertVisible(true)}>
-        Popup Alert
-      </Button>
-      {isAlertVisible && (
-        <Alert
-          onClose={() => {
-            setAlertVisible(false);
-          }}
-        ></Alert>
-      )}
-    </>
+    <ListGroup items={cities} heading="Cities" onSelectedItem={handleClick} />
   );
 }
 
